@@ -1,0 +1,24 @@
+@model Admission
+
+<h2 class="text-center my-4">Novi nalaz</h2>
+
+<form asp-action="AddReport" method="post" class="form-horizontal">
+    
+    
+
+    <div class="form-group row">
+        <label for="ReportText" class="col-sm-2 col-form-label">Detalji:</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" id="ReportText" name="ReportText" rows="5" required></textarea>
+        </div>
+    </div>
+
+    
+
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Dodaj novi nalaz</button>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,51 @@
+@model Patient
+
+<h2 class="text-center my-4">Dodaj pacijenta</h2>
+
+<form asp-action="AddPatient" method="post" class="form-horizontal">
+    
+    <div class="form-group row">
+        <label for="NameAndSurname" class="col-sm-2 col-form-label">Ime i prezime*:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="NameAndSurname" name="NameAndSurname" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DateOfBirth" class="col-sm-2 col-form-label">Datum rođenja*:</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Gender" class="col-sm-2 col-form-label">Spol*:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="Gender" name="Gender" required>
+                <option value="Male">Muško</option>
+                <option value="Female">Žensko</option>
+                <option value="Unknown">Nepoznato</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Address" class="col-sm-2 col-form-label">Adresa:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Address" name="Address" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="PhoneNumber" class="col-sm-2 col-form-label">Telefon:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Dodaj novog pacijenta</button>
+        </div>
+    </div>
+</form>

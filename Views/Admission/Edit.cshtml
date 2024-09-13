@@ -1,0 +1,56 @@
+@model NMK.Models.Admission
+
+@{
+    ViewData["Title"] = "Uredi prijem";
+}
+
+<h2 class="text-center my-4">Uredi Prijem</h2>
+
+<form asp-action="Edit" method="post" class="form-horizontal">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group row">
+        <label for="DateAdmitted" class="col-sm-2 col-form-label">Datum prijema:</label>
+        <div class="col-sm-10">
+            <input type="datetime-local" class="form-control" id="DateTimeAdmitted" name="DateTimeAdmitted" required 
+                   min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" /> 
+            <span asp-validation-for="DateAdmitted" class="text-danger"></span>
+        </div>
+    </div>
+
+    
+
+   <div class="form-group row">
+        <label for="PatientId" class="col-sm-2 col-form-label">Pacijent:</label>
+        <div class="col-sm-10">
+            <select class="form-control" asp-for="PatientId" asp-items="@(new SelectList(ViewBag.Patients, "Id", "NameAndSurname"))">
+                <option value="">Select Patient</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DoctorId" class="col-sm-2 col-form-label">Liječnik:</label>
+        <div class="col-sm-10">
+            <select class="form-control" asp-for="DoctorId" asp-items="@(new SelectList(ViewBag.Doctors, "Id", "Surname"))">
+                <option value="">Select Doctor</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Emergency" class="col-sm-2 col-form-label">Hitni prijem:</label>
+        <div class="col-sm-10">
+            
+            <input type="checkbox" name="Emergency" value="true" /> 
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+</form>

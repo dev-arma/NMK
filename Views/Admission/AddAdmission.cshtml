@@ -1,0 +1,57 @@
+@model Admission
+
+<h2 class="text-center my-4">Novi prijem pacijenta</h2>
+
+<form asp-action="AddAdmission" method="post" class="form-horizontal">
+
+   
+   <div class="form-group row">
+        <label for="DateAdmitted" class="col-sm-2 col-form-label">Datum i vrijeme prijema:</label>
+        <div class="col-sm-10">
+            <input type="datetime-local" class="form-control" id="DateAdmitted" name="DateAdmitted" required 
+                   min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" /> 
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="PatientId" class="col-sm-2 col-form-label">Pacijent:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="PatientId" name="PatientId" required>
+                <option value="">Izaberi pacijenta</option>
+                @foreach (var patient in ViewBag.Patients)
+                {
+                    <option value="@patient.Id">@patient.NameAndSurname</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DoctorId" class="col-sm-2 col-form-label">Liječnik:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="DoctorId" name="DoctorId" required>
+                <option value="">Izaberi liječnika</option>
+                @foreach (var doctor in ViewBag.Doctors)
+                {
+                    <option value="@doctor.Id">@doctor.Name dr @doctor.Surname (@doctor.DoctorCode)</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Emergency" class="col-sm-2 col-form-label">Hitni prijem:</label>
+        <div class="col-sm-10">
+            
+            <input type="checkbox" name="Emergency" value="true" /> Hitno
+        </div>
+    </div>
+    
+
+
+    <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Dodaj novi prijem pacijenta</button>
+        </div>
+    </div>
+</form>

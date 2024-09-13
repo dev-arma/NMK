@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Naša Mala Klinika</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background: url('https://blog.mangoapps.com/wp-content/uploads/HealthcareEngagementIdeas.png') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .feature-box {
+            padding: 30px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .feature-box h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .feature-box p {
+            font-size: 1.1rem;
+        }
+        footer {
+            padding: 20px;
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Dobrodošli u Našu Malu Kliniku</h1>
+            <p>Mali svijet pun radosti</p>
+        </div>
+        
+    </div>
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <h2><a href="/Patient">Pacijenti</a></h2>
+                    <p>Provjerite spisak naših pacijenata.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <h2><a href="/Doctor">Liječnici</a></h2>
+                    <p>Pristupite spisku liječnika.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <h2><a href="/Admission">Prijemi</a></h2>
+                    <p>Spisak prijema i novi prijem.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
