@@ -2,7 +2,7 @@
 
 ## 0. Početna stranica
 
-![Alt text](images/Home.png)
+<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/Home.png">
 
 
 ## 1. Upravljanje Pacijentima
@@ -11,8 +11,8 @@
 - Da biste vidjeli sve pacijente, idite na stranicu **Pacijenti**.
 - **URL:** `/Patients/Index`
 
-![Alt text](images/PacijentiIndex.png)
-<img title="a title" alt="Alt text" src="/images/PacijentiIndex.png">
+
+<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/PacijentiIndex.png">
 
 # Uputstvo za Korištenje Sistema
 
@@ -44,8 +44,8 @@
 - Da biste vidjeli sve liječnike, idite na stranicu **Lista Liječnika**.
 - **URL:** `/Doctors/Index`
 
-![Alt text](images/DoktoriIndex.png)
-<img title="a title" alt="Alt text" src="/images/DoktoriIndex.png">
+
+<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/DoktoriIndex.png">
 
 ### Dodavanje Novog Liječnika
 - Kliknite na dugme **Dodaj novog liječnika**.
@@ -69,8 +69,8 @@
 - Da biste vidjeli sve prijeme, idite na stranicu **Lista Prijema**.
 - **URL:** `/Admissions/Index`
 
-![Alt text](images/PrijemiIndex.png)
-<img title="a title" alt="Alt text" src="/images/PrijemiIndex.png">
+
+<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/PrijemiIndex.png">
 
 ### Dodavanje Novog Prijema
 - Kliknite na dugme **Dodaj novi prijem**.
