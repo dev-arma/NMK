@@ -2,23 +2,21 @@
 
 ## 0. Početna stranica
 
-
-![Alt Text](images/Home.png)
+<img title="a title" alt="Alt text" src="/images/Home.png">
 
 ## 1. Upravljanje Pacijentima
 
 ### Pregled Liste Pacijenata
 - Da biste vidjeli sve pacijente, idite na stranicu **Pacijenti**.
 - **URL:** `/Patients/Index`
-
-![Alt Text](images/PacijentiIndex.png)
+<img title="a title" alt="Alt text" src="/images/PacijentiIndex.png">
 
 # Uputstvo za Korištenje Sistema
 
 ## 1. Upravljanje Pacijentima
 
 ### Pregled Liste Pacijenata
-- Da biste vidjeli sve pacijente, idite na stranicu **Pacijenti**.
+- Da biste vidjeli sve pacijente, idite na stranicu **Lista Pacijenata**.
 - **URL:** `/Patients/Index`
 
 ### Dodavanje Novog Pacijenta
@@ -43,9 +41,7 @@
 - Da biste vidjeli sve liječnike, idite na stranicu **Lista Liječnika**.
 - **URL:** `/Doctors/Index`
 
-![Alt Text](images/DoktoriIndex.png)
-
-
+<img title="a title" alt="Alt text" src="/images/DoktoriIndex.png">
 
 ### Dodavanje Novog Liječnika
 - Kliknite na dugme **Dodaj novog liječnika**.
@@ -68,7 +64,7 @@
 ### Pregled Liste Prijema
 - Da biste vidjeli sve prijeme, idite na stranicu **Lista Prijema**.
 - **URL:** `/Admissions/Index`
-![Alt Text](images/Prijemi.png)
+<img title="a title" alt="Alt text" src="/images/PrijemiIndex.png">
 
 ### Dodavanje Novog Prijema
 - Kliknite na dugme **Dodaj novi prijem**.
