@@ -2,13 +2,16 @@
 
 ## 0. Početna stranica
 
-<img title="a title" alt="Alt text" src="/images/Home.png">
+![Alt text](images/Home.png)
+
 
 ## 1. Upravljanje Pacijentima
 
 ### Pregled Liste Pacijenata
 - Da biste vidjeli sve pacijente, idite na stranicu **Pacijenti**.
 - **URL:** `/Patients/Index`
+
+![Alt text](images/PacijentiIndex.png)
 <img title="a title" alt="Alt text" src="/images/PacijentiIndex.png">
 
 # Uputstvo za Korištenje Sistema
@@ -41,6 +44,7 @@
 - Da biste vidjeli sve liječnike, idite na stranicu **Lista Liječnika**.
 - **URL:** `/Doctors/Index`
 
+![Alt text](images/DoktoriIndex.png)
 <img title="a title" alt="Alt text" src="/images/DoktoriIndex.png">
 
 ### Dodavanje Novog Liječnika
@@ -64,6 +68,8 @@
 ### Pregled Liste Prijema
 - Da biste vidjeli sve prijeme, idite na stranicu **Lista Prijema**.
 - **URL:** `/Admissions/Index`
+
+![Alt text](images/PrijemiIndex.png)
 <img title="a title" alt="Alt text" src="/images/PrijemiIndex.png">
 
 ### Dodavanje Novog Prijema
