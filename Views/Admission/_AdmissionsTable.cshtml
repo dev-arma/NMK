@@ -1,0 +1,33 @@
+@model IEnumerable<Admission>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Datum i vrijeme prijema</th>
+            <th>Pacijent</th>
+            <th>Nadležni liječnik</th>
+            <th>Hitni prijem</th>
+            <th>Akcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admission in Model)
+        {
+            <tr>
+                <td>@admission.DateAdmitted.ToString("dd/MM/yyyy HH:mm")</td> 
+                <td>@admission.Patient.NameAndSurname</td> 
+                <td>dr @admission.Doctor.Surname @admission.Doctor.Name (@admission.Doctor.DoctorCode)</td> 
+                <td>@(admission.Emergency ? "Da" : "Ne")</td> 
+                <td>
+                    <a href="@(Url.Action("Edit", new { id = admission.Id }))" class="btn btn-primary">Uredi</a>
+                    <form method="post" action="@(Url.Action("DeleteConfirmed", new { id = admission.Id }))" style="display:inline;" onsubmit="return confirmDelete();">
+                        <input type="hidden" name="id" value="@admission.Id" />
+                        <button type="submit" class="btn btn-danger">Obriši</button>
+                    </form>
+                    <a href="@(Url.Action("AddReport", new { id = admission.Id }))" class="btn btn-info">Dodaj nalaz</a>
+                    <a href="@(Url.Action("ViewAdmission", new { id = admission.Id }))" class="btn btn-warning">Pogledaj nalaz</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -275,3 +275,5 @@ C:\Users\Armin\Documents\BERG\Zadatak\NMK\bin\Debug\net8.0\runtimes\win\lib\net6
 C:\Users\Armin\Documents\BERG\Zadatak\NMK\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Armin\Documents\BERG\Zadatak\NMK\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\Armin\Documents\BERG\Zadatak\NMK\obj\Debug\net8.0\NMK.csproj.Up2Date
+c:\Users\Armin\Documents\BERG\Zadatak\NMK\obj\Debug\net8.0\NMK.sourcelink.json
+c:\Users\Armin\Documents\BERG\Zadatak\NMK\bin\Debug\net8.0\DinkToPdf.dll

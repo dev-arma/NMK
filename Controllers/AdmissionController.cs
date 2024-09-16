@@ -4,26 +4,68 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NMK.Data;
 using NMK.Models;
+using DinkToPdf;
+using DinkToPdf.Contracts;
+
+
 
 namespace NMK.Controllers;
 
 public class AdmissionController : Controller
 {
     private readonly NMKDbContext _context;
+    private readonly IConverter _converter;
 
-    public AdmissionController(NMKDbContext context)
+    public AdmissionController(NMKDbContext context, IConverter converter)
     {
         _context = context;
+        _converter = converter;
     }
     public async Task<IActionResult> Index()
-    {
-        var admissions = await _context.Admissions.Include(a => a.Patient).Include(a => a.Doctor).Where(a => !a.IsDeleted).ToListAsync();
+    {   
+        
+        
+        var admissions = await _context.Admissions
+                        .Include(a => a.Patient)
+                        .Include(a => a.Doctor)
+                        .Where(a => !a.IsDeleted)
+                        .ToListAsync();
         return View(admissions);
+        
+
     }
+    
+    public async Task <IActionResult> FilterAdmissions(DateTime? DateFrom, DateTime? DateTo)
+    {   
+        
+        var admissionsQuery = _context.Admissions
+                        .Include(a => a.Patient)
+                        .Include(a => a.Doctor)
+                        .Where(a => !a.IsDeleted);
+
+    if (DateFrom != null)
+    {
+        admissionsQuery = admissionsQuery.Where(a => a.DateAdmitted >= DateFrom);
+    }
+
+    if (DateTo != null)
+    {
+        admissionsQuery = admissionsQuery.Where(a => a.DateAdmitted <= DateTo);
+    }
+
+    var admissions = await admissionsQuery.ToListAsync();
+    
+    
+    return PartialView("_AdmissionsTable", admissions);
+        
+    }
+
+
     public IActionResult AddAdmission()
     {
         ViewBag.Patients = _context.Patients.Where(p => !p.IsDeleted).ToList();
@@ -67,6 +109,76 @@ public class AdmissionController : Controller
 
         return View(admission); 
     }
+
+    public async Task<IActionResult> GeneratePDF(int? id)
+    {
+        var admission = await _context.Admissions
+                                .Include(a => a.Patient)
+                                .Include(a => a.Doctor)
+                                .FirstOrDefaultAsync(a => a.Id == id);
+        
+        var htmlContent = $@"
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>NMK Nalaz</title>
+            <style>
+                body {{ font-family: Arial, sans-serif; margin: 0; padding: 0; }}
+                h1 {{ color: #333; }}
+                table {{ width: 100%; border-collapse: collapse; }}
+                th, td {{ padding: 8px; border: 1px solid #ddd; }}
+            </style>
+        </head>
+        <body>
+            <h1>Medicinski nalaz</h1>
+            <h3>Informacije o pacijentu</h3>
+            <p><strong>Ime:</strong> {admission.Patient.NameAndSurname}</p>
+            <p><strong>Datum rođenja:</strong> {admission.Patient.DateOfBirth:dd/MM/yyyy}</p>
+
+            <h3>Informacije o liječniku</h3>
+            <p><strong>Ime:</strong> {admission.Doctor.Name}</p>
+
+            <h3>Detalji nalaza</h3>
+            <p><strong>Datum:</strong> {admission.DateAdmitted:dd/MM/yyyy}</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Detalji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{admission.ReportText}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>Naša Mala Klinika</h1>
+        </body>
+        </html>";
+
+        var pdfDocument = new HtmlToPdfDocument
+        {
+            GlobalSettings = {
+                ColorMode = ColorMode.Color,
+                Orientation = Orientation.Portrait,
+                PaperSize = PaperKind.A4
+            },
+            Objects = {
+                new ObjectSettings
+                {
+                    HtmlContent = htmlContent,
+                    WebSettings = { DefaultEncoding = "utf-8" }
+                }
+            }
+        };
+
+        var pdf = _converter.Convert(pdfDocument);
+
+        return File(pdf, "application/pdf", $"NMK_NalazSpecijaliste_{admission.Patient.NameAndSurname}.pdf");
+    }
+
 
     public IActionResult AddReport(int? id)
     {

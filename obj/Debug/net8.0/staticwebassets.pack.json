@@ -245,6 +245,38 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox copy.dll",
+      "PackagePath": "staticwebassets\\libwkhtmltox copy.dll"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox.dll",
+      "PackagePath": "staticwebassets\\libwkhtmltox.dll"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox.dylib",
+      "PackagePath": "staticwebassets\\libwkhtmltox.dylib"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox.so",
+      "PackagePath": "staticwebassets\\libwkhtmltox.so"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox\\libwkhtmltox.dll",
+      "PackagePath": "staticwebassets\\libwkhtmltox\\libwkhtmltox.dll"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox\\libwkhtmltox.dylib",
+      "PackagePath": "staticwebassets\\libwkhtmltox\\libwkhtmltox.dylib"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\libwkhtmltox\\libwkhtmltox.so",
+      "PackagePath": "staticwebassets\\libwkhtmltox\\libwkhtmltox.so"
+    },
+    {
+      "Id": "c:\\Users\\Armin\\Documents\\BERG\\Zadatak\\NMK\\wwwroot\\wkhtmltox.dll",
+      "PackagePath": "staticwebassets\\wkhtmltox.dll"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.NMK.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
