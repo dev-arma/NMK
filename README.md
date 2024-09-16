@@ -6,22 +6,14 @@
 
  - Na početnoj stranici možete izabrati pregled pacijenata, liječnika ili pregleda.
 
-## 1. Upravljanje Pacijentima
-
-### Pregled Liste Pacijenata
-- Da biste vidjeli sve pacijente, idite na stranicu **Pacijenti**.
-- **URL:** `/Patients/Index`
-
-
-<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/PacijentiIndex.png">
-
-# Uputstvo za Korištenje Sistema
 
 ## 1. Upravljanje Pacijentima
 
 ### Pregled Liste Pacijenata
 - Da biste vidjeli sve pacijente, idite na stranicu **Lista Pacijenata**.
 - **URL:** `/Patients/Index`
+
+<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/PacijentiIndex.png">
 
 ### Dodavanje Novog Pacijenta
 - Kliknite na dugme **Dodaj novog pacijenta**.
