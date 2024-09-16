@@ -6,9 +6,9 @@ public class Patient
 {
     public int Id { get; set; }
 
-    public required DateTime DateAdded = DateTime.Now;
+    public required DateTime DateAdded { get; set; }
 
-    public DateTime? DateModified;
+    public DateTime? DateModified { get; set; }
     
     public required string NameAndSurname { get; set; }
     

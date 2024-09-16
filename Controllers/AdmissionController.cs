@@ -78,10 +78,10 @@ public class AdmissionController : Controller
     {
         if (ModelState.IsValid)
         {
-            
+            admission.DateAdded = DateTime.Now;
             _context.Admissions.Add(admission);
             _context.SaveChanges();
-            admission.DateAdded = DateTime.Now;
+            
             return RedirectToAction("Index");
         }
 
@@ -138,14 +138,16 @@ public class AdmissionController : Controller
 
             <h3>Informacije o liječniku</h3>
             <p><strong>Ime:</strong> {admission.Doctor.Name}</p>
+            <p><strong>Prezime:</strong> dr {admission.Doctor.Surname}</p>
+            <p><strong>Šifra:</strong> {admission.Doctor.DoctorCode}</p>
 
             <h3>Detalji nalaza</h3>
-            <p><strong>Datum:</strong> {admission.DateAdmitted:dd/MM/yyyy}</p>
+            <p><strong>Datum:</strong> {admission.ReportDate:dd/MM/yyyy}</p>
             
             <table>
                 <thead>
                     <tr>
-                        <th>Detalji</th>
+                        <th>Dijagnoza</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -210,6 +212,8 @@ public class AdmissionController : Controller
             {
                 return NotFound();
             }
+        admission.ReportDate = DateTime.Now;
+        admission.DateModified = DateTime.Now;
         admission.ReportText = ReportText;
         _context.Admissions.Update(admission);
         _context.SaveChanges();

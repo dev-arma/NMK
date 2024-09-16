@@ -8,9 +8,9 @@ public class Admission
 {
     public int Id { get; set; }
 
-    public required DateTime DateAdded = DateTime.Now;
+    public required DateTime DateAdded { get; set; } 
 
-    public DateTime? DateModified;
+    public DateTime? DateModified { get; set; } 
     [DataType(DataType.Date)]
     public required DateTime DateAdmitted { get; set; } 
     [ForeignKey("Patient")]
@@ -24,6 +24,7 @@ public class Admission
     
     public bool Emergency { get; set; } = true;
 
+    public DateTime ReportDate { get; set; }
     public string ReportText { get; set; } = string.Empty;
 
     public bool IsDeleted { get; set; } = false;

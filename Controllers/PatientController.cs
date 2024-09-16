@@ -34,10 +34,11 @@ public class PatientController : Controller
     public IActionResult AddPatient(Patient patient)
     {
         if (ModelState.IsValid)
-        {
+        {   
+            patient.DateAdded=DateTime.Now;
             _context.Patients.Add(patient);
             _context.SaveChanges();
-            patient.DateAdded=DateTime.Now;
+            
             return RedirectToAction("Index");
         }
         return View(patient);
