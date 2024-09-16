@@ -34,7 +34,7 @@
 - Potvrdite brisanje kada vam se zatraži.
 - **Obrisani pacijenti ostaju u bazi podataka. Brisanjem pacijenata mijenja se varijabla isDeleted! Mogući je retroaktivni pregled obrisanih pacijenata direktno u bazi podataka**
 
-<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/BrisanjePacijenata.png">
+<img title="a title" alt="Alt text" src="https://github.com/dev-arma/NMK/blob/master/Images/BrisanjePacijenta.png">
 
 
 ## 2. Upravljanje Liječnicima
@@ -74,7 +74,7 @@
 ## 3. Upravljanje Prijemima
 
 ### Pregled Liste Prijema
-- Da biste vidjeli sve prijeme, idite na stranicu **Lista Prijema**.
+- Da biste vidjeli sve prijeme, idite na stranicu **Prijemi**.
 - **URL:** `/Admissions/Index`
 
 
